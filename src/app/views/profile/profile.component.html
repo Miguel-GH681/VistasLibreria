@@ -1,0 +1,27 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Salida</th>
+            <th>Retorno</th>
+            <th>Título</th>
+            <th>Autores</th>
+            <th>Páginas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of lends; index as i">
+            <td>{{i+1}}</td>
+            <td>{{book.fecha_salida}}</td>
+            <td>{{book.fecha_retorno}}</td>
+            <td>{{book.libro.titulo}}</td>
+            <td>{{book.libro.autores}}</td>
+            <td>{{book.libro.paginas}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)="saveData(i)">
+                    Eliminar
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

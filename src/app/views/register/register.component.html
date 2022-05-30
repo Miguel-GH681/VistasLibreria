@@ -1,0 +1,126 @@
+<div class="fondo">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Crear Cuenta</h3>
+			</div>
+			<div class="card-body">
+				<form class="formulario">
+					<div class="row">
+						<div class="col-md-6 mb-4">
+						  <div class="form-outline">
+							<input type="text" id="nombres" class="form-control form-control-lg" [(ngModel)]="newUser.nombres"  name="nombres"/>
+							<label class="form-label" for="nombres">Nombres</label>
+						  </div>
+						</div>
+            <div class="col-md-6 mb-4">
+						  <div class="form-outline">
+							<input type="text" id="apellidos" class="form-control form-control-lg" [(ngModel)]="newUser.apellidos"  name="apellidos" />
+							<label class="form-label" for="apellidos">Apellidos</label>
+						  </div>
+						</div>
+					</div>
+          <div class="row">
+						<div class="col-md-6 mb-4">
+						  <div class="form-outline">
+							<input type="text" id="username" class="form-control form-control-lg" [(ngModel)]="newUser.username" name="username"/>
+							<label class="form-label" for="username">Username</label>
+						  </div>
+						</div>
+            <div class="col-md-6 mb-4">
+						  <div class="form-outline">
+							<input type="text" id="contraseña" class="form-control form-control-lg" [(ngModel)]="newUser.contrasenia" name="contraseña" />
+							<label class="form-label" for="contraseña">Contraseña</label>
+						  </div>
+						</div>
+					</div>
+          <div class="row">
+						<div class="col-md-6 mb-4">
+						  <div class="form-outline">
+							<input type="text" id="telefono" class="form-control form-control-lg" [(ngModel)]="newUser.telefono" name="telefono" />
+							<label class="form-label" for="telefono">Telefono</label>
+						  </div>
+						</div>
+            <div class="col-md-6 mb-4">
+              <h6 class="mb-2 pb-1">Sexo</h6>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sexo" id="femaleGender"
+                  value="F"  [(ngModel)]="newUser.sexo" checked />
+                <label class="form-check-label" for="femaleGender">Femenino</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sexo" id="maleGender"
+                  value="M" [(ngModel)]="newUser.sexo"/>
+                <label class="form-check-label" for="maleGender">Masculino</label>
+              </div>                      
+            </div>
+					</div>
+
+					<div class="row">
+					<div class="col-md-12 mb-4">
+						<div class="form-outline">
+							<input type="text" id="direccion" class="form-control form-control-lg" [(ngModel)]="newUser.direccion" name="direccion"/>
+							<label class="form-label" for="direccion">Direccion</label>
+						</div>
+						</div>
+					</div>
+          <div class="row">
+            <div class="col-md-6 mb-4">
+              <h6 class="mb-2 pb-1">Roll</h6>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="roll" id="femaleGender"
+                  value="estudiante" [(ngModel)]="newUser.roll"/>
+                <label class="form-check-label" for="femaleGender">Estudiante</label>
+              </div>
+
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="roll" id="maleGender"
+                  value="profesor" [(ngModel)]="newUser.roll"/>
+                <label class="form-check-label" for="maleGender">Profesor</label>
+              </div>                      
+            </div>
+						<div class="col-md-6 mb-4">
+						  <div class="form-outline">
+							<input type="text" id="edad" class="form-control form-control-lg" [(ngModel)]="newUser.edad" name="edad" />
+							<label class="form-label" for="edad">Edad</label>
+						  </div>
+						</div>
+					</div>
+          <div class="row">	
+            <div class="col-md-6 mb-4">
+              <select id="grado" class="form-select form-select-lg mg-3"  [(ngModel)]="newUser.id_grado" name="id_grado">
+                <option *ngFor="let grado of grados" [ngValue]="grado.id_grado" >{{ grado.nombre }} - {{ grado.seccion }}</option>
+              </select>
+              <label class="form-label" for="grado">Grado</label>
+            </div>
+
+            <div class="col-md-6 mb-4">
+						  <div class="form-outline">
+							<input type="text" id="email" class="form-control form-control-lg" [(ngModel)]="newUser.email"  name="email" />
+							<label class="form-label" for="email">Email</label>
+						  </div>
+						</div>
+			</div>
+
+
+			<div class="row">	
+
+				<div class="col-md-6 mb-4">
+					<input type="submit" value="Crear" class="btn float-right login_btn" (click)="register()" >
+
+					</div>
+				</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="alert alert-danger" *ngIf="showCard == true">
+          {{errorMsg}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

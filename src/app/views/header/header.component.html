@@ -1,0 +1,10 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #FFC312;">
+  <div class="container-fluid">
+    <h2 style="padding: 10px;">Biblioteca</h2>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="cerrar">
+        <input type="button" value="Cerrar Sesión" class="btn btn-dark" *ngIf="userToken != null" (click)="cerrarSesion()">
+      </div>
+    </div>
+  </div>
+</nav>
